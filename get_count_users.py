@@ -1,5 +1,6 @@
-from webbrowser import get
-import get_data
+
+import json 
+from get_data import get_data as gt
 
 def get_count_users(data:dict) -> int:
     """
@@ -10,4 +11,12 @@ def get_count_users(data:dict) -> int:
     Returns:
         int: number of users
     """
-    
+    users = len(data['results'])
+    return users 
+
+
+filename = 'randomuser_data_json'
+dt = gt(filename)
+
+print(get_count_users(dt))  
+
